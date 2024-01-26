@@ -1,0 +1,22 @@
+name: Dings
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push, workflow_dispatch]
+jobs:
+  Testding:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: a
+        run: yarn
+      - name: b
+        run: yarn build
+      - name: c
+        run: yarn test
+      - name: d
+        run: yarn test:e2e
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: emoji
+        run: echo "🍏 This job's status is ${{ job.status }}."
