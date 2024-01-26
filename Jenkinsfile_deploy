@@ -17,6 +17,12 @@ pipeline {
             }
         }
 
+        stage('test') {
+            steps {
+                sh 'yarn test'
+            }
+        }
+
         stage('deploy') {
             steps {
                 s3Upload consoleLogLevel: 'INFO', 
